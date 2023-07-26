@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  encryptFileWithAES,
+  encryptDataWithAES,
   encryptAESKeywithRSA,
-  decryptFileWithAES,
+  decryptDataWithAES,
   decryptAESKeywithRSA,
 } from "arweavekit/encryption";
 import { useState } from "react";
@@ -45,7 +45,7 @@ export default function Home() {
     //   "This is the file",
     //   fileAsArrayBuffer
     // );
-    const encryptedDataFromFunction = await encryptFileWithAES({
+    const encryptedDataFromFunction = await encryptDataWithAES({
       data: inputFile,
     });
 
@@ -78,7 +78,7 @@ export default function Home() {
 
     // console.log("This is the decrypted key:", decryptedKey);
 
-    const decryptedData = await decryptFileWithAES({
+    const decryptedData = await decryptDataWithAES({
       data: encryptedData,
       key: decryptedKey,
     });
